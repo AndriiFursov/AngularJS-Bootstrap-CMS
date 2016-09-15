@@ -1,0 +1,250 @@
+<div class="panel panel-primary  tour">
+    <div class="panel-heading">
+        <h2 class="panel-title">Information about tour</h2>
+    </div>
+    <form name="tourCtrl.newtour" class="panel-body" novalidate>
+        <div class="form-group  ig-tour-head">
+            <!-- <button type="button" class="btn btn-primary btn-sm pull-right">
+                Reload handbooks
+            </button> -->
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                    Tour ID{{tourCtrl.ok}}
+                </span>
+                <input type="text" class="form-control" ng-model="tourCtrl.newTour.id" readonly>
+                <label class="input-group-addon" ng-class="{'label-success': tourCtrl.newTour.show, 'label-warning': !tourCtrl.newTour.show}">
+                    <input type="checkbox" ng-model="tourCtrl.newTour.show">
+                    Show this tour
+                </label>
+            </div><!-- /input-group -->
+        </div><!-- /form-group -->
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <tr-ag-inputgroup-select name="country" class="ig-select"  ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Country*'" items="tourCtrl.handbooks().countries"
+                ng-model="tourCtrl.newTour.country" required>
+                </tr-ag-inputgroup-select>
+    
+                <tr-ag-inputgroup-select name="city" class="ig-select"  ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'City*'" 
+                items="tourCtrl.handbooks().cities"
+                ng-model="tourCtrl.newTour.city" required>
+                </tr-ag-inputgroup-select>
+    
+                <tr-ag-inputgroup-datepicker name="departure" class="ig-datepicker"  ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Departure*'" 
+                ng-model="tourCtrl.newTour.departure" pattern="^[A-Za-zА-Яа-яЁё0-9\.\/\s\-\,]{1,40}$" required>
+                </tr-ag-inputgroup-datepicker>
+                
+                <tr-ag-inputgroup-datepicker name="expire" class="ig-datepicker"  ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Expire Date*'" 
+                ng-model="tourCtrl.newTour.expireDate" pattern="^(((0[1-9]|[12]\d|3[01])\.(0[13578]|1[02])\.((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\.(0[13456789]|1[012])\.((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\.02\.((19|[2-9]\d)\d{2}))|(29\.02\.((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$"
+                required>
+                </tr-ag-inputgroup-datepicker>
+
+                <div class="form-group  ig-input" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            From*
+                        </span>
+                        <input name="from" type="text" class="form-control" maxlength="15" ng-model="tourCtrl.newTour.from" pattern="^[A-Za-zА-Яа-яЁё\'\s\-]{3,15}$" required>
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+                
+                <tr-ag-inputgroup-select name="vehicle"  class="ig-select" ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Vehicle*'" items="tourCtrl.handbooks().vehicles"
+                ng-model="tourCtrl.newTour.vehicle" set-default="0" required>
+                </tr-ag-inputgroup-select>
+                
+                <div class="form-group  ig-input-select" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            Duration*
+                        </span>
+                        <input type="text" name="duration" class="form-control  short" maxlength="3" ng-model="tourCtrl.newTour.duration" pattern="^[0-9]{1,3}$" required>
+                        <span class="input-group-addon  short">
+                            days
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+                
+                <div class="form-group  ig-price" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            Price*
+                        </span>
+                        <input name="price" type="text" class="form-control  short" maxlength="10" ng-model="tourCtrl.newTour.price" pattern="^[A-Za-zА-Яа-яЁё0-9\s]{1,10}$" required>
+                        <tr-ag-select name="pcurrency" set-default="0"
+                        ng-class="{'check-invalid': tourCtrl.validation}"
+                        items="tourCtrl.handbooks().currencies"
+                        ng-model="tourCtrl.newTour.currency" required>
+                        </tr-ag-select>
+                        <span class="input-group-addon">
+                            for*
+                        </span>
+                        <input name="people" type="text" class="form-control  short" maxlength="3" ng-model="tourCtrl.newTour.people" pattern="^[0-9]{0,3}$" required>
+                        <span class="input-group-addon">
+                            adult(s)
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+                
+                <div class="form-group  ig-input-long" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            Hotel Name*
+                        </span>
+                        <input name="hotel" type="text" class="form-control" maxlength="50" ng-model="tourCtrl.newTour.hotelName" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\.\,\'\$\&\/()]{1,50}$" required>
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+                
+                <div class="form-group" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            Hotel Class*
+                        </span>
+                        <input name="hclass" type="text" class="form-control" maxlength="15" ng-model="tourCtrl.newTour.hotelClass" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\*]{1,15}$" required>
+                        <span class="input-group-addon">
+                            id
+                        </span>
+                        <input name="hid" type="text" class="form-control" maxlength="12" ng-model="tourCtrl.newTour.hotelId" pattern="^[0-9]{12}$">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-click="tourCtrl.clearHotel()">
+                                Clear Hotel
+                            </button>
+                        </div>
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+            </div><!-- /col -->
+            
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group">
+                    <div class="panel  presentation"ng-class="{'panel-danger': (tourCtrl.newTour.type.id === 'hot'),'panel-success': (tourCtrl.newTour.type.id === 'hotest'),'panel-warning': (tourCtrl.newTour.type.id === 'premium'),'panel-info': (tourCtrl.newTour.type.id === 'extrim')}">
+                        <div class="panel-heading">
+                            {{tourCtrl.testTagline()||'Tagline'}}
+                        </div>
+                        <div class="panel-body">
+                            {{tourCtrl.newTour.shortDescription||tourCtrl.testDescription()||'Short description of the tour'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="panel panel-default description">
+                        <div class="panel-heading">
+                            Short description of the tour
+                        </div>
+                        <textarea name="description" class="form-control panel-body" maxlength="120" ng-model="tourCtrl.newTour.shortDescription" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\.\,\'\$\&\/\!\?\:\;()$€]{0,120}$">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <div class="panel panel-info  hotels">
+                        <div class="panel-heading">
+                            Found hotels
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li ng-repeat="hotelLink in tourCtrl.foundHotels"><a href ng-click="tourCtrl.setHotel(hotelLink[1])">{{hotelLink[1].name}} {{hotelLink[1].class}} ({{hotelLink[1].country}})</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /row -->
+        
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <tr-ag-inputgroup-input-select name="room" class="ig-input-dropdown" ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Room*'"
+                items="tourCtrl.handbooks().rooms"
+                ng-model="tourCtrl.newTour.room" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\.\,\'\&\/()]{1,50}$" required>
+                </tr-ag-inputgroup-input-select>
+                 
+                <tr-ag-inputgroup-input-select name="accommodation" class="ig-input-dropdown" ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Accommodation*'"
+                items="tourCtrl.handbooks().accommodation"
+                ng-model="tourCtrl.newTour.accommodation" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-()]{1,40}$" required>
+                </tr-ag-inputgroup-input-select>
+                
+                <tr-ag-inputgroup-select name="type" class="ig-select" ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Tour Type*'" set-default="1"
+                items="tourCtrl.handbooks().tourTypes"
+                ng-model="tourCtrl.newTour.type" required>
+                </tr-ag-inputgroup-select>
+
+                <tr-ag-inputgroup-input-select name="operator" class="ig-input-dropdown" ng-class="{'check-invalid': tourCtrl.validation}"
+                ig-header="'Touroperator*'"
+                items="tourCtrl.handbooks().tourOperators"
+                ng-model="tourCtrl.newTour.operator" pattern="^[A-Za-zА-Яа-яЁё0-9\s\'\-()]{1,40}$" required>
+                </tr-ag-inputgroup-input-select>
+                
+                <div class="form-group  ig-input-long" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            Tagline
+                        </span>
+                        <input name="tagline" type="text" class="form-control" maxlength="25" ng-model="tourCtrl.newTour.tagline" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\.\,\'\$\&\/\!\?\:\;()$€]{0,25}$">
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+                
+                <div class="form-group  ig-input-long" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">
+                            Extra info
+                        </span>
+                        <input name="extrainfo" type="text" class="form-control" maxlength="300" ng-model="tourCtrl.newTour.extraInfo" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\.\,\'\$\&\/\!\?\:\;()$€]{0,300}$">
+                    </div><!-- /input-group -->
+                </div><!-- /form-group -->
+            </div><!-- /col -->
+        
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            The price includes
+                        </div>
+                        <textarea name="priceinclude" class="form-control panel-body" maxlength="300" ng-model="tourCtrl.newTour.priceInclude" pattern="^[A-Za-zА-Яа-яЁё0-9\s\-\.\,\'\$\&\/\!\?\:\;()$€]{0,300}$"
+                        ></textarea>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group" ng-class="{'check-invalid': tourCtrl.validation}">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Visa
+                        </div>
+                        <div class="panel-body  visa">
+                            <div class="radio" ng-class="{'has-error': tourCtrl.visaError.short}">
+                                <input type="checkbox" ng-model="tourCtrl.visaChbx.short">
+                                <span class="visa-text">Extras visa. The cost of </span>
+                                <input type="text" class="form-control  short-text" maxlength="4" ng-model="tourCtrl.visaText.short" pattern="^\d{1,4}$">
+                                <tr-ag-select class="select" set-default="0"
+                                items="tourCtrl.handbooks().currencies"
+                                ng-model="tourCtrl.visaCurrency">
+                                </tr-ag-select>
+                                <span class="visa-text"> upon arrival!</span>
+                            </div>
+                            <div class="radio" ng-class="{'has-error': tourCtrl.visaError.middle}">
+                                <input type="checkbox" ng-model="tourCtrl.visaChbx.middle">
+                                <span class="visa-text">Extras visa.</span>
+                                <input type="text" class="form-control  middle-text" maxlength="100" ng-model="tourCtrl.visaText.middle" pattern="^[а-яёА-ЯЁ\w\d\s\-\.$€₴,!]{2,100}$">
+                            </div>
+                            <div class="radio" ng-class="{'has-error': tourCtrl.visaError.long}">
+                                <input type="checkbox" ng-model="tourCtrl.visaChbx.long">
+                                <input type="text" class="form-control  long-text" maxlength="300" ng-model="tourCtrl.visaText.long" pattern="^[а-яёА-ЯЁ\w\d\s\-\.$€₴,!]{7,300}$">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /row -->
+    </form>
+</div><!-- /panel -->

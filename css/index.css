@@ -1,0 +1,416 @@
+/*
+ * Styles for index.html
+*/
+.error-field {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+.error-focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+/* Variables */
+/* Bootstrap -- Sticky footer styles -- start
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+/* Bootstrap -- Sticky footer styles -- end
+-------------------------------------------------- */
+/* ui.bootstrap --  start
+-------------------------------------------------- */
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
+/* ui.bootstrap --  end
+-------------------------------------------------- */
+/* Changed bootstrap rules --  start
+-------------------------------------------------- */
+.navbar-toggle {
+  float: none;
+}
+.btn-default {
+  background: none;
+}
+@media (max-width: 992px) {
+  .container.nbt-768-header {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: inline-block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid #e7e7e7;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-collapse.in {
+    display: block !important;
+  }
+  .navbar-fixed-top .navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .container > .navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .navbar-nav {
+    float: none;
+    margin: 7.5px -15px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-header {
+    float: left;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-collapse {
+    border-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .navbar-collapse.collapse {
+    display: block !important;
+  }
+  .navbar-fixed-top .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .container > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .navbar-nav > li {
+    float: left;
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+/* Changed bootstrap rules --  end
+-------------------------------------------------- */
+/* Total -- start
+-------------------------------------------------- */
+.placeholder {
+  color: #a599b2;
+}
+[type="checkbox"] {
+  height: 17px;
+  width: 17px;
+}
+.check-invalid.ng-invalid.ng-invalid,
+.check-invalid .form-control.ng-invalid,
+.check-invalid.ng-invalid .btn,
+.check-invalid .form-control .btn,
+.check-invalid.ng-invalid .form-control,
+.check-invalid .form-control .form-control {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+.check-invalid.ng-invalid.ng-invalid:focus,
+.check-invalid .form-control.ng-invalid:focus,
+.check-invalid.ng-invalid .form-control:focus,
+.check-invalid .form-control .form-control:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+.not-bootstrap-nav {
+  float: right;
+}
+.not-bootstrap-nav form {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+.modal-title.warning {
+  color: #d43f3a;
+}
+.modal-title.success {
+  color: #337ab7;
+}
+.dropdown-menu:not(.uib-datepicker-popup) {
+  max-height: 165px;
+  overflow: auto;
+}
+/* Total -- end
+-------------------------------------------------- */
+/* Tour info -- start
+-------------------------------------------------- */
+.panel.tour .input-group-addon:first-child {
+  width: 150px;
+  text-align: right;
+  font-weight: bold;
+}
+.panel.tour button.dropdown-toggle {
+  text-align: right;
+}
+.panel.tour button.dropdown-toggle .select-value {
+  float: left;
+}
+.panel.tour .ig-tour-head .form-control {
+  width: 220px;
+}
+.panel.tour .ig-tour-head label.input-group-addon {
+  position: relative;
+  width: 170px;
+  color: #fff;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.panel.tour .ig-tour-head label.input-group-addon [type="checkbox"] {
+  position: absolute;
+  top: 6px;
+  left: 15px;
+}
+.panel.tour .ig-select .input-group-btn,
+.panel.tour .ig-input .input-group-btn,
+.panel.tour .ig-select .btn,
+.panel.tour .ig-input .btn,
+.panel.tour .ig-select .form-control,
+.panel.tour .ig-input .form-control {
+  width: 220px;
+}
+.panel.tour .ig-datepicker .form-control,
+.panel.tour .ig-input-dropdown .form-control {
+  width: 190px;
+}
+.panel.tour .ig-datepicker .input-group-btn,
+.panel.tour .ig-input-dropdown .input-group-btn,
+.panel.tour .ig-datepicker .btn.calendar,
+.panel.tour .ig-input-dropdown .btn.calendar {
+  width: 30px;
+}
+.panel.tour .ig-datepicker .btn.calendar,
+.panel.tour .ig-input-dropdown .btn.calendar {
+  padding-left: 9px;
+}
+.panel.tour .ig-price .form-control,
+.panel.tour .ig-input-select .form-control {
+  width: 170px;
+}
+.panel.tour .ig-price .input-group-btn,
+.panel.tour .ig-input-select .input-group-btn,
+.panel.tour .ig-price .btn,
+.panel.tour .ig-input-select .btn,
+.panel.tour .ig-price .input-group-addon:last-child,
+.panel.tour .ig-input-select .input-group-addon:last-child {
+  width: 50px;
+}
+.panel.tour .ig-input-long .form-control {
+  width: 390px;
+}
+.panel.tour .ig-price .input-group-addon:not(:first-child) {
+  width: auto;
+}
+.panel.tour .ig-price .input-group-addon:last-child {
+  width: 83px;
+}
+.panel.tour .ig-price .btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.panel.tour .ig-price input:last-of-type {
+  width: 45px;
+}
+.panel.tour .panel {
+  border-color: #cccccc;
+}
+.panel.tour .panel .panel-heading {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.panel.tour .panel.panel-default .panel-heading {
+  font-weight: bold;
+  color: #555555;
+  background-color: #eeeeee;
+}
+.panel.tour .panel textarea {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border: 0;
+  resize: none;
+  overflow: auto;
+  font-size: 12px;
+}
+.panel.tour .panel .visa {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+.panel.tour .panel .visa .visa-text {
+  line-height: 2.1;
+  font-style: italic;
+}
+.panel.tour .panel .visa .select,
+.panel.tour .panel .visa .select .btn {
+  display: inline-block;
+  width: 50px;
+}
+.panel.tour .panel .visa .select .btn,
+.panel.tour .panel .visa .select .btn .btn {
+  font-size: 12px;
+}
+.panel.tour .panel .visa .short-text,
+.panel.tour .panel .visa .middle-text,
+.panel.tour .panel .visa .long-text {
+  display: inline;
+  height: 30px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.panel.tour .panel .visa .short-text {
+  width: 60px;
+}
+.panel.tour .panel .visa .middle-text {
+  width: 395px;
+}
+.panel.tour .panel .visa .long-text {
+  width: 473px;
+}
+.panel.tour .panel .visa [type="checkbox"] {
+  position: relative;
+  top: 4px;
+  margin-right: 5px;
+}
+.panel.tour .panel.presentation {
+  width: 220px;
+}
+.panel.tour .panel.presentation .panel-heading {
+  height: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #3a3435;
+  overflow: hidden;
+}
+.panel.tour .panel.presentation .panel-body {
+  height: 130px;
+  font-size: 13px;
+  line-height: 1.4em;
+  overflow: hidden;
+}
+.panel.tour .panel.description .panel-body {
+  height: 170px;
+}
+.panel.tour .panel.hotels {
+  margin-bottom: 15px;
+}
+.panel.tour .panel.hotels .panel-body {
+  height: 182px;
+  overflow: auto;
+}
+/* Tour info -- end
+-------------------------------------------------- */
+/* Hotel info -- start
+-------------------------------------------------- */
+ul[class*="list"] {
+  list-style-type: none;
+  padding-left: 0;
+}
+.close {
+  line-height: 0.9;
+}
+.chbxs-section:last-of-type hr {
+  display: none;
+}
+.photos-list img {
+  width: 100%;
+  height: 130px;
+}
+@media (min-width: 992px) {
+  .photos-list img {
+    height: 180px;
+  }
+}
+@media (min-width: 1200px) {
+  .photos-list img {
+    height: 100px;
+  }
+}
+.photos-list img.has-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+.photos-list .add-img {
+  cursor: pointer;
+}
+.photos-list li {
+  position: relative;
+  margin-bottom: 10px;
+}
+.photos-list .close {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+}
+.added-list li {
+  margin-bottom: 5px;
+}
+.chbx-list input[type="number"] {
+  margin-left: -20px;
+  padding-left: 5px;
+  width: 50px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+/* Hotel info -- end
+-------------------------------------------------- */
+/* Bootstrap -- Sticky footer styles -- start
+-------------------------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}

@@ -1,0 +1,12 @@
+<div class="form-group">
+    <div class="input-group input-group-sm">
+        <span class="input-group-addon">
+            {{igHeader}}
+        </span>
+        <input type="text" class="form-control" maxlength="40" ng-model="departure">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default  calendar" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </div><!-- /input-group -->
+    <input type="hidden" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-required="true">
+</div><!-- /form-group -->

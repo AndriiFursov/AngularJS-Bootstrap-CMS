@@ -1,0 +1,118 @@
+<!-- 1 - home page -->
+<!DOCTYPE html>
+<html lang="en" ng-app="travelAgency">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="COK-travel CMS">
+        <meta name="description" content="COK-travel CMS">
+        <meta name="author" lang="en" content="Tolomuco.xyz">
+        <link rel="icon" href="favicon.ico">
+        
+        <title>COK-travel Admin Tool</title>
+
+        <!-- <link href="css/fonts/font-awesome.min.css" rel="stylesheet"> -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        <!-- Bootstrap core CSS -->
+        <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="css/lib/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        
+        <!-- textAngular styles -->
+        <link href="css/lib/textAngular.css" rel="stylesheet">
+        
+        <!-- Custom styles for this template -->
+        <!-- <link href="css/sticky-footer-navbar.css" rel="stylesheet"> -->
+        <link href="css/index.css" rel="stylesheet">
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body ng-controller="trAgTourCreationController as creationCtrl">
+    
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container  nbt-768-header">
+                <div class="not-bootstrap-nav">
+                    <form class="navbar-form navbar-right">
+                        <a href="#top" target="_self" class="btn btn-default"
+                        popover-placement="bottom" uib-popover="Go Top" popover-trigger="'mouseenter'">
+                            <span class="glyphicon glyphicon-menu-up"></span>
+                        </a>
+                        <a href="#bottom" target="_self" class="btn btn-default"
+                        popover-placement="bottom" uib-popover="Go Bottom" popover-trigger="'mouseenter'">
+                            <span class="glyphicon glyphicon-menu-down"></span>
+                        </a>
+                        <button type="button" class="btn btn-success" 
+                        ng-click="creationCtrl.createNewTour()">
+                            Create Tour
+                        </button>
+                    </form>
+                </div>                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" 
+                    ng-init="navCollapsed = true" 
+                    ng-click="navCollapsed = !navCollapsed">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">COK-travel Home</a><!-- [1] -->
+                </div>
+                <div class="navbar-collapse collapse" 
+                ng-class="!navCollapsed && 'in'">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href>New Tour Creation</a></li>
+                        <li><a href="tours-catalog.html">Tours Catalog</a></li>
+                        <li><a href="handbooks.html">Handbooks</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        
+        <!-- Begin page content -->
+        <div id="top" class="container">
+            <ng-include src="'current-tour/tour.html'" ng-controller="trAgTourController as tourCtrl"></ng-include>
+            <ng-include src="'current-hotel/hotel.html'" ng-controller="trAgHotelController as hotelCtrl"></ng-include>
+        </div>        
+        
+        <footer id="bottom" class="footer">
+          <div class="container">
+            <p class="text-muted"></p>
+          </div>
+        </footer>
+        
+        
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="components/lib/ie10-viewport-bug-workaround.js"></script>
+        <script src="components/lib/angular.min.js"></script>
+        <script src="components/lib/angular-animate.min.js"></script>
+        <script src="components/lib/ui-bootstrap-tpls-2.0.0.min.js"></script>
+        <script src="components/lib/textAngular-rangy.min.js"></script>
+        <script src="components/lib/textAngular-sanitize.min.js"></script>
+        <script src="components/lib/textAngular.min.js"></script>
+        <script src="app.js"></script>
+        <script src="components/directives.js"></script>
+        <script src="components/controllers.js"></script>
+        <script src="components/services.js"></script>
+        <script src="tour-creation/tour-creation.js"></script>
+        <script src="tour-creation/controllers/tour-creation.creation-controller.js"></script>
+        <script src="current-tour/tour.js"></script>
+        <script src="current-tour/controllers/tour.tour-controller.js"></script>
+        <script src="current-tour/services/tour.tour-service.js"></script>
+        <script src="current-hotel/hotel.js"></script>
+        <script src="current-hotel/controllers/hotel.hotel-controller.js"></script>
+        <script src="current-hotel/services/hotel.hotel-service.js"></script>
+        <script src="current-hotel/services/hotel.new-hotel-service.js"></script>
+    </body>
+</html>

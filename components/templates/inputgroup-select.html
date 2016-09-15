@@ -1,0 +1,18 @@
+<div class="form-group">
+    <div class="input-group input-group-sm">
+        <span class="input-group-addon">
+            {{igHeader}}
+        </span>
+        <div class="input-group-btn" uib-dropdown>
+            <button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>
+                <span class="select-value" ng-bind="ngModel.name"></span> 
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
+                <li ng-repeat="choice in items">
+                  <a href ng-bind="choice.name" ng-click="onSelect(choice)"></a>
+                </li>
+            </ul>
+        </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+</div><!-- /form-group -->

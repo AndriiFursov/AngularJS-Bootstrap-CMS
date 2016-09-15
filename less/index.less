@@ -1,0 +1,624 @@
+/*
+ * Styles for index.html
+*/
+
+@import "lib/variables.less";
+@import "lib/mixins.less";
+
+/* Variables */
+//@c-border:           #cccccc; -------------------------------
+
+
+/* Bootstrap -- Sticky footer styles -- start
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  
+  
+    > .container {
+      padding: 60px 15px 0;
+    }
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}
+/* Bootstrap -- Sticky footer styles -- end
+-------------------------------------------------- */
+
+/* ui.bootstrap --  start
+-------------------------------------------------- */
+// emty href correction
+.nav, .pagination, .carousel, .panel-title a { 
+    cursor: pointer; 
+}
+/* ui.bootstrap --  end
+-------------------------------------------------- */
+
+
+
+
+
+/* Changed bootstrap rules --  start
+-------------------------------------------------- */
+// navbar botton align left
+.navbar-toggle {
+    float: none; 
+}
+
+
+.btn-default {
+    background: none;
+}
+
+
+// fluid navbar for tablet screen
+@media (max-width: @screen-md-min) {
+    .container.nbt-768-header {
+        width: auto;
+    }
+}
+
+    
+// we need colapsed menu on tablet screen
+@media (min-width: @screen-sm-min) {
+    .navbar-header {
+        float: none;
+    }
+    
+    
+    .navbar-toggle {
+        display: inline-block;
+    }
+
+    
+    .navbar-collapse {
+        border-top: 1px solid #e7e7e7;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    }
+    
+    
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    
+    
+    .navbar-collapse.in {
+        display: block !important;
+    }
+    
+    
+    .navbar-fixed-top .navbar-collapse {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    
+    .container>.navbar-collapse {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
+    
+    .navbar-nav {
+        float: none;
+        margin: 7.5px -15px;
+    
+    
+        >li {
+            float: none;
+            
+            
+            >a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }  
+    }        
+}
+
+
+@media (min-width: @screen-md-min) {
+    .navbar-header {
+        float: left;
+    }
+    
+    
+    .navbar-toggle {
+        display: none;
+    }
+    
+    
+    .navbar-collapse {
+        border-top: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    .navbar-collapse.collapse {
+        display: block !important;
+    }
+    
+    
+    .navbar-fixed-top .navbar-collapse {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    
+    .container>.navbar-collapse {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    
+    .navbar-nav {
+        float: left;
+        margin: 0;
+    
+    
+        >li {
+            float: left;
+            
+            
+            >a {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }  
+    }        
+}
+/* Changed bootstrap rules --  end
+-------------------------------------------------- */
+
+
+
+
+
+
+/* Total -- start
+-------------------------------------------------- */
+.placeholder {
+    color: #a599b2;
+}
+
+
+[type="checkbox"] {
+    height: 17px;
+    width: 17px;
+}
+
+.check-invalid {
+    &.ng-invalid, 
+    .form-control {
+        &.ng-invalid,
+        .btn, .form-control {
+            .error-field;
+        }
+        
+        &.ng-invalid:focus,
+        .form-control:focus {
+            .error-focus;
+        }
+    }
+}
+
+
+// add "create tour" button to navbar such way because this button 
+// have not to be hiden when menu colapsed
+.not-bootstrap-nav {
+    float: right;
+    
+    
+    form {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0;
+    }
+}
+
+
+.modal-title {
+    &.warning {
+        color: #d43f3a;
+    }
+    
+    &.success {
+        color: #337ab7;
+    }
+}
+
+
+.dropdown-menu:not(.uib-datepicker-popup) {
+    max-height: 165px;
+    overflow: auto;
+}
+//.has-error .help-block,
+//.has-error .control-label,
+//.has-error .radio,
+//.has-error .checkbox,
+//.has-error .radio-inline,
+//.has-error .checkbox-inline,
+//.has-error.radio label,
+//.has-error.checkbox label,
+//.has-error.radio-inline label,
+//.has-error.checkbox-inline label {
+//  color: #a94442;
+//}
+//.has-error .form-control {
+//  border-color: #a94442;
+//  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+//          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+//}
+//.has-error .form-control:focus {
+//  border-color: #843534;
+//  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+//          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+//}
+//.has-error .input-group-addon {
+//  color: #a94442;
+//  background-color: #f2dede;
+//  border-color: #a94442;
+//}
+//.has-error .form-control-feedback {
+//  color: #a94442;
+//}
+
+/* Total -- end
+-------------------------------------------------- */
+
+
+
+
+
+/* Tour info -- start
+-------------------------------------------------- */
+.panel.tour {
+    .input-group-addon:first-child {
+        width: 150px;
+        text-align: right;
+        font-weight: bold;
+    }
+    
+    
+    button.dropdown-toggle {
+        text-align: right;
+        
+        
+        .select-value {
+            float: left;
+        }
+    }
+    
+    
+    .ig-tour-head {
+        .form-control{
+            width: 220px;
+        }
+        
+        
+        label.input-group-addon {
+            position: relative;
+            width: 170px;
+            color: #fff;
+            padding-left: 30px;
+            cursor: pointer;
+            
+            
+            [type="checkbox"] {
+                position: absolute;
+                top: 6px;
+                left: 15px;
+            }
+        }
+    }
+    
+    
+    .ig-select, 
+    .ig-input {
+        .input-group-btn, .btn, 
+        .form-control{
+            width: 220px;
+        }
+    }
+    
+    
+    .ig-datepicker,
+    .ig-input-dropdown {
+        .form-control {
+            width: 190px;
+        }
+    
+    
+        .input-group-btn, .btn.calendar {
+            width: 30px;
+        }
+        
+        
+        .btn.calendar {
+            padding-left: 9px;
+        }
+    }
+    
+    
+    .ig-price,
+    .ig-input-select {
+        .form-control {
+            width: 170px;
+        }
+        
+        
+        .input-group-btn, .btn,
+        .input-group-addon:last-child {
+            width: 50px;
+        }
+    }
+    
+    
+    .ig-input-long {
+        .form-control {
+            width: 390px;
+        }
+    }
+    
+    
+    .ig-price {
+        .input-group-addon {
+            &:not(:first-child) {
+                width: auto;
+            }
+            
+            &:last-child {
+                width: 83px;
+            }
+        }
+        
+        
+        .btn {
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+        
+        
+        input:last-of-type {
+            width: 45px;
+        }
+    }
+    
+    
+    .panel {
+        border-color: @btn-default-border;
+        
+        
+        .panel-heading {
+            padding: 5px 10px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        
+        &.panel-default .panel-heading {
+            font-weight: bold;
+            color: @list-group-link-color;
+            background-color: @input-group-addon-bg;
+        }
+        
+        
+        textarea {
+            .border-top-radius(0);
+            border: 0;
+            .resizable(none);
+            font-size: 12px;
+        }
+        
+        
+        .visa {
+            padding-top: 0px;
+            padding-bottom: 10px;
+            
+            
+            .visa-text {
+                line-height: 2.1;
+                font-style: italic;
+            }
+            
+            
+            .select, .select .btn {
+                display: inline-block;
+                width: 50px;
+                
+                .btn {
+                    font-size: 12px;
+                }
+            }
+            
+            
+            .short-text, .middle-text, .long-text {
+                display: inline;
+                height: 30px;
+                font-size: 12px;
+                line-height: 1.5;
+            }
+            
+            
+            .short-text {
+                width: 60px;
+            }
+            
+            
+            .middle-text {
+                width: 395px;
+            }
+            
+            
+            .long-text {
+                width: 473px;
+            }
+            
+            [type="checkbox"] {
+                position: relative;
+                top: 4px;
+                margin-right: 5px;
+            }
+        }
+        
+        
+        &.presentation {
+            width: 220px;
+            
+            
+            .panel-heading {
+                height: 70px;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.4em;
+                text-align: center;
+                text-transform: uppercase;
+                color: #3a3435;
+                overflow: hidden;
+            }
+            
+            
+            .panel-body {
+                height: 130px;
+                font-size: 13px;
+                line-height: 1.4em;
+                overflow: hidden;
+            }
+        }
+        
+        
+        &.description {
+            .panel-body {
+                height: 170px;
+            }
+        }
+        
+        
+        &.hotels {
+            margin-bottom: 15px;
+            
+            
+            .panel-body {
+                height: 182px;
+                overflow: auto;
+            }
+        }
+    }
+}
+/* Tour info -- end
+-------------------------------------------------- */
+
+
+
+
+
+/* Hotel info -- start
+-------------------------------------------------- */
+ul[class*="list"] {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+.close {
+    line-height: 0.9;
+}
+
+
+.chbxs-section:last-of-type hr {
+    display: none;
+}
+
+
+.photos-list {
+    img {
+        width: 100%;
+        height: 130px;
+        
+        @media (min-width: @screen-md-min) {
+            height: 180px;
+        }
+        
+        @media (min-width: @screen-lg-min) {
+            height: 100px;
+        }
+        
+        
+        &.has-error {
+            .error-field;
+        }
+    }
+    
+    
+    .add-img {
+        cursor: pointer;
+    }
+    
+    
+    li {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 25px;
+    }
+}
+
+
+.added-list {
+    li {
+        margin-bottom: 5px;
+    }
+}
+
+
+.chbx-list {
+    input[type="number"] {
+        margin-left: -20px;
+        padding-left: 5px;
+        width: 50px;
+        border: 1px solid #ccc;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+}
+
+/* Hotel info -- end
+-------------------------------------------------- */
+
+
+
+
+
+/* Bootstrap -- Sticky footer styles -- start
+-------------------------------------------------- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+
+  
+    > .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+/* Bootstrap -- Sticky footer styles -- end
+-------------------------------------------------- */

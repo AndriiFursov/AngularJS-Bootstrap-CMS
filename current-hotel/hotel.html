@@ -1,0 +1,147 @@
+<div class="panel panel-primary  hotel">
+    <div class="panel-heading">
+        <h2 class="panel-title">Information about hotel</h2>
+    </div>
+    <form name="hotelCtrl.newhotel" class="panel-body" novalidate>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Photos:</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <ul class="photos-list">
+                <li class="col-sm-4 col-lg-2" 
+                ng-repeat="photo in hotelCtrl.newHotel.photos">
+                    <!-- <img ng-src="{{photo}}" alt="tour image" 
+                    class="img-thumbnail"> -->
+                    <img ng-src="http://travelingua.com.ua/tour-img/{{photo}}" alt="tour image" 
+                    class="img-thumbnail">
+                    <button type="button" class="close" 
+                    ng-click="hotelCtrl.delPhoto(photo)">
+                        <span>&times;</span>
+                    </button>
+                </li>
+                
+                <li class="col-sm-4 col-lg-2">
+                    <img src="img/add-img.jpg" alt="add new image" title="add new image" ng-class="{'has-error': hotelCtrl.newHotel.errorFields.photo}"
+                    class="img-thumbnail  add-img" 
+                    ng-click="hotelCtrl.addPhoto()">
+                </li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Hotel description:</h3>
+                <text-angular name="hoteldescription" ng-model="hotelCtrl.newHotel.description"></text-angular>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Distances:</h4>
+                <ul class="added-list">
+                    <li class="input-group input-group-sm" ng-repeat="item in hotelCtrl.newHotel.distances">
+                        <input type="text" class="form-control" 
+                        placeholder="add item" ng-model="item">
+                        <div class="input-group-addon" 
+                        ng-click="hotelCtrl.delItem(hotelCtrl.newHotel.distances, item)">
+                            <span class="input-group-btn">
+                                <button type="button" class="close">
+                                    <span>&times;</span>
+                                </button>
+                            </span>
+                        </div>
+                    </li><!-- /input-group -->
+                </ul>
+                <button type="button" class="btn btn-primary btn-sm" 
+                ng-click="hotelCtrl.addItem(hotelCtrl.newHotel.distances)">Add item</button>
+            </div>
+            <div class="col-sm-6">
+                <h4>Reconstractions:</h4>
+                <ul class="added-list">
+                    <li class="input-group input-group-sm" ng-repeat="item in hotelCtrl.newHotel.reconstructions">
+                        <input type="text" class="form-control" 
+                        placeholder="add item" ng-model="item">
+                        <div class="input-group-addon" 
+                        ng-click="hotelCtrl.delItem(hotelCtrl.newHotel.reconstructions, item)">
+                            <span class="input-group-btn">
+                                <button type="button" class="close">
+                                    <span>&times;</span>
+                                </button>
+                            </span>
+                        </div>
+                    </li><!-- /input-group -->
+                </ul>
+                <button type="button" class="btn btn-primary btn-sm" 
+                ng-click="hotelCtrl.addItem(hotelCtrl.newHotel.reconstructions)">Add item</button>
+            </div>
+        </div>
+        
+        <hr>
+ 
+        <div class="chbxs-section" 
+        ng-repeat="group in hotelCtrl.newHotel.groups">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>{{group.groupTitle}}:</h3>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="chbx-list">
+                        <li class="checkbox" ng-repeat="item in group.col1">
+                            <label>
+                                <input type="{{item.type}}" ng-model="item.active">
+                                {{item.title}}
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="chbx-list">
+                        <li class="checkbox" ng-repeat="item in group.col2">
+                            <label>
+                                <input type="{{item.type}}" ng-model="item.active">
+                                {{item.title}}
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="chbx-list">
+                        <li class="checkbox" ng-repeat="item in group.col3">
+                            <label>
+                                <input type="{{item.type}}" ng-model="item.active">
+                                {{item.title}}
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-sm-4">
+                    <ul class="added-list">
+                        <li class="input-group input-group-sm" ng-repeat="item in group.colExtra">
+                            <input type="text" class="form-control" 
+                            placeholder="add item" ng-model="item.title">
+                            <div class="input-group-addon" 
+                            ng-click="hotelCtrl.delItem(group.colExtra, item)">
+                                <span class="input-group-btn">
+                                    <button type="button" class="close">
+                                        <span>&times;</span>
+                                    </button>
+                                </span>
+                            </div>
+                        </li><!-- /input-group -->
+                    </ul>
+                </div>
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-primary btn-sm" ng-click="hotelCtrl.addItem(group.colExtra)">Add item</button>
+                </div>
+            </div>
+            
+            <hr>
+        </div>
+    </form>
+</div><!-- /panel -->
